@@ -26,7 +26,7 @@ Host: www.example.com
 User-Agent: Mozilla/5.0
 Accept: text/html
 - An HTTP response consists of a status line (which includes the status code and reason phrase),headers (which provide additional information about the response), and an optional body (which contains the content being returned). For example, a successful response to the above request might look like this:
-HTTP/1.1 200 OK
+"HTTP/1.1 200 OK
 Content-Type: text/html
 Content-Length: 1234
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ Content-Length: 1234
 <h1>Welcome to Example.com!</h1>
 <p>This is a sample webpage.</p>
 </body>
-</html>
+</html>"
 - Understanding HTTP requests and responses is crucial for web development and security, as it allows developers to create and debug web applications, and helps security professionals identify and exploit vulnerabilities in web applications. For example, an attacker might craft a malicious HTTP request to exploit a vulnerability in a web application, such as an SQL injection or cross-site scripting (XSS) vulnerability, to gain unauthorized access or steal sensitive information.
 - The HTTP/1.1 is the most widely used version of the HTTP protocol, but HTTP/2 and HTTP/3 are newer versions that offer improved performance and security features. It's important to be familiar with the different versions of HTTP and their capabilities when working with web applications.
 - HTTP status codes are categorized into five classes: informational (1xx), successful (2xx), redirection (3xx), client error (4xx), and server error (5xx). Each status code provides information about the outcome of the request. For example, a 200 OK status code indicates that the request was successful, while a 404 Not Found status code indicates that the requested resource could not be found on the server. Understanding these status codes is important for troubleshooting and debugging web applications, as well as for identifying potential security issues.
