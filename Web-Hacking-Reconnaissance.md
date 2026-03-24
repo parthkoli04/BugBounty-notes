@@ -107,3 +107,19 @@ IP Address:
     - Web application fingerprinting: This involves analyzing the responses from the target application to identify the technologies and frameworks used by the application.
     - Vulnerability scanning: This involves using automated tools to scan the target application for known vulnerabilities associated with the identified services and technologies.
 - Document any services and applications identified during your enumeration, as well as any additional information obtained about those services, such as their versions, configurations, or any vulnerabilities or sensitive information exposed by those services. This information can be valuable for later stages of testing and for writing your report.
+
+# Directory Brute Forcing
+- Directory brute forcing is a technique used to discover hidden directories and files on a web server. This can help you identify additional attack surfaces and potential vulnerabilities that may not be immediately visible through normal browsing.
+- To perform directory brute forcing, you can use various tools and techniques. Some popular tools include:
+    - [DirBuster](https://github.com/digination/dirbuster)
+    - [Gobuster](https://github.com/OJ/gobuster)
+    - [Dirsearch](https://github.com/maurosoria/dirsearch)
+- When performing directory brute forcing, you can use a wordlist of common directory and file names to attempt to access those directories and files on the target application. The tool will send requests to the target application for each entry in the wordlist and analyze the responses to determine if the directory or file exists.
+- Pay attention to the HTTP status codes returned by the target application during directory brute forcing. A status code of 200 may indicate that the directory or file exists, while a status code of 404 may indicate that it does not exist. However, be aware that some applications may return a status code of 200 for all requests, even if the directory or file does not exist, so it's important to analyze the responses carefully.
+- Document any directories and files discovered during your brute forcing, as well as any additional information obtained about those directories and files, such as their contents, permissions, or any vulnerabilities or sensitive information exposed by those directories and files. This information can be valuable for later stages of testing and for writing your report.
+
+# Third Party Hosting
+- During your reconnaissance, you may come across third-party hosting services that are used by the target application. These services may include content delivery networks (CDNs), cloud hosting providers, or other third-party services that are used to host parts of the application or to provide additional functionality.
+- It's important to identify any third-party hosting services used by the target application, as they may have different security controls and vulnerabilities compared to the main application. Additionally, these third-party services may have their own attack surfaces that can be exploited during testing.
+- To identify third-party hosting services, you can analyze the HTTP headers returned by the target application. Look for headers such as "Server" or "X-Powered-By" that may indicate the hosting provider or the technologies used by the application. You can use tools such as `curl` or online services to analyze the HTTP headers. For example, you can run `curl -sI https://example.com | grep "Server\|X-Powered-By"` to retrieve the relevant headers.
+- Document any third-party hosting services identified during your reconnaissance, as well as any additional information obtained about those services, such as their hosting providers, technologies used, or any vulnerabilities or sensitive information exposed by those services. This information can be valuable for later stages of testing and for writing your report.
