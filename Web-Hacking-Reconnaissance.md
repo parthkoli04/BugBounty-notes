@@ -53,3 +53,30 @@
 - When performing a reverse WHOIS lookup, you can search for domains based on the registrant's name, email address, or other contact information. This can help you identify other domains that may be associated with the target organization, which can provide additional opportunities for reconnaissance and testing.
 - Document any findings from your WHOIS and reverse WHOIS lookups, including the information obtained and any additional domains identified. This information can be valuable for later stages of testing and for writing your report.
 
+IP Address:
+- An IP address is a unique identifier assigned to each device connected to a network. In the context of web reconnaissance, identifying the IP address of the target application can provide valuable information about the hosting environment, potential vulnerabilities, and other attack surfaces.
+- To find the IP address of a target domain, you can use various tools and techniques. One common method is to use the `nslookup` command in the terminal. For example, you can run `nslookup example.com` to retrieve the IP address associated with the domain.
+- Another method is to use online tools such as:
+    - [DNS Lookup](https://dnslookup.online/)
+    - [MXToolbox](https://mxtoolbox.com/DNSLookup.aspx)
+- When you perform an IP address lookup, you may find multiple IP addresses associated with the target domain, especially if the application is hosted on a content delivery network (CDN) or uses load balancing. In such cases, it's important to note all the IP addresses associated with the target domain, as they may all be relevant for reconnaissance and testing.
+- Document the IP addresses associated with the target domain, as well as any additional information obtained from the lookup, such as the hosting provider or geographic location. This information can be valuable for later stages of testing and for writing your report.   
+
+# Certificate Parsing
+- SSL/TLS certificates are used to secure communication between a client and a server. When a website uses HTTPS, it presents an SSL/TLS certificate to the client to establish a secure connection.
+- Certificate parsing involves analyzing the SSL/TLS certificate presented by the target application to extract valuable information that can be useful for reconnaissance and testing. This information may include the domain names covered by the certificate, the organization that issued the certificate, and the expiration date of the certificate.
+- To parse an SSL/TLS certificate, you can use various tools and techniques. One common method is to use the `openssl` command in the terminal. For example, you can run `openssl s_client -connect example.com:443` to retrieve the certificate information for the target domain.
+- Another method is to use online tools such as:
+    - [SSL Labs](https://www.ssllabs.com/ssltest/)
+    - [Certificate Decoder](https://www.sslshopper.com/certificate-decoder.html)
+    - [crt.sh](https://crt.sh/)
+    - [Censys](https://censys.io/)
+    - [Certspotter](https://certspotter.com/)
+- When parsing the certificate, pay attention to the following information:
+    - Common Name (CN): The primary domain name covered by the certificate.
+    - Subject Alternative Names (SANs): Additional domain names covered by the certificate.
+    - Issuer: The organization that issued the certificate.
+    - Expiration Date: The date when the certificate is set to expire.
+- By analyzing the certificate information, you may be able to identify additional domains associated with the target application, which can provide additional opportunities for reconnaissance and testing. For example, if the certificate includes multiple SANs, you can investigate those additional domains to see if they are part of the target application and if they have any vulnerabilities or sensitive information exposed.
+- Document any findings from your certificate parsing, including the information obtained and any additional domains identified. This information can be valuable for later stages of testing and for writing your report.
+
