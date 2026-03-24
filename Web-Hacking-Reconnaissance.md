@@ -80,3 +80,30 @@ IP Address:
 - By analyzing the certificate information, you may be able to identify additional domains associated with the target application, which can provide additional opportunities for reconnaissance and testing. For example, if the certificate includes multiple SANs, you can investigate those additional domains to see if they are part of the target application and if they have any vulnerabilities or sensitive information exposed.
 - Document any findings from your certificate parsing, including the information obtained and any additional domains identified. This information can be valuable for later stages of testing and for writing your report.
 
+# Subdomain Enumeration
+- Subdomain enumeration is the process of identifying subdomains associated with a target domain. Subdomains can provide additional attack surfaces and may have different security controls or vulnerabilities compared to the main domain. Therefore, identifying subdomains is an important part of reconnaissance and can help you discover additional vulnerabilities or sensitive information that may be exposed on the target application.
+- There are various tools and techniques available for subdomain enumeration. Some popular tools include:
+    - [Sublist3r](https://github.com/aboul3la/Sublist3r)
+    - [Amass](https://github.com/OWASP/Amass)
+    - [Gobuster](https://github.com/OJ/gobuster)
+
+- When performing subdomain enumeration, you can use a combination of techniques, such as:
+    - DNS brute forcing: This involves using a wordlist of common subdomain names and attempting to resolve them against the target domain to see if they exist.
+    - Certificate transparency logs: By analyzing SSL/TLS certificates, you can identify additional subdomains that are covered by the certificate.
+    - Search engine queries: Using search engines with specific queries can help you discover subdomains that may be indexed by search engines.
+    - Passive reconnaissance: This involves using online services that collect and analyze DNS data to identify subdomains associated with the target domain.
+- Document any subdomains identified during your enumeration, as well as any additional information obtained about those subdomains, such as their IP addresses, hosting providers, or any vulnerabilities or sensitive information exposed on those subdomains. This information can be valuable for later stages of testing and for writing your report. 
+
+# Service Enumeration
+- Service enumeration is the process of identifying the services and applications running on the target application. This can provide valuable information about the technologies used by the target application, potential vulnerabilities, and attack surfaces that can be exploited during testing.
+- To perform service enumeration, you can use various tools and techniques. Some popular tools include:
+    - [Nmap](https://nmap.org/)
+    - [Masscan](https://github.com/robertdavidgraham/masscan)
+    - [Nikto](https://github.com/sullo/nikto)
+    - [WhatWeb](https://github.com/urbanadventurer/WhatWeb)
+- When performing service enumeration, you can use a combination of techniques, such as:
+    - Port scanning: This involves scanning the target application for open ports to identify which services are running on those ports.
+    - Banner grabbing: This involves connecting to the open ports and retrieving information about the services running on those ports, such as the software name and version.
+    - Web application fingerprinting: This involves analyzing the responses from the target application to identify the technologies and frameworks used by the application.
+    - Vulnerability scanning: This involves using automated tools to scan the target application for known vulnerabilities associated with the identified services and technologies.
+- Document any services and applications identified during your enumeration, as well as any additional information obtained about those services, such as their versions, configurations, or any vulnerabilities or sensitive information exposed by those services. This information can be valuable for later stages of testing and for writing your report.
