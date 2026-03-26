@@ -123,3 +123,15 @@ IP Address:
 - It's important to identify any third-party hosting services used by the target application, as they may have different security controls and vulnerabilities compared to the main application. Additionally, these third-party services may have their own attack surfaces that can be exploited during testing.
 - To identify third-party hosting services, you can analyze the HTTP headers returned by the target application. Look for headers such as "Server" or "X-Powered-By" that may indicate the hosting provider or the technologies used by the application. You can use tools such as `curl` or online services to analyze the HTTP headers. For example, you can run `curl -sI https://example.com | grep "Server\|X-Powered-By"` to retrieve the relevant headers.
 - Document any third-party hosting services identified during your reconnaissance, as well as any additional information obtained about those services, such as their hosting providers, technologies used, or any vulnerabilities or sensitive information exposed by those services. This information can be valuable for later stages of testing and for writing your report.
+
+# Github Recon
+- GitHub is a popular platform for hosting code repositories, and it can be a valuable source of information during reconnaissance. Many organizations use GitHub to host their code, and sometimes sensitive information such as API keys, credentials, or configuration files may be accidentally exposed in public repositories.
+- To perform GitHub reconnaissance, you can use the GitHub API or command-line tools to search for repositories associated with the target organization. For example, you can use the `gh` command-line tool to search for repositories owned by the target organization. You can run `gh repo list getyourguide --json name,description,createdAt` to retrieve a list of repositories owned by the "getyourguide" organization, along with their names, descriptions, and creation dates.
+- When analyzing GitHub repositories, pay attention to the following information:
+    - Repository names and descriptions: This can provide insights into the projects and technologies used by the target organization.
+    - Commit history: This can reveal changes made to the codebase, which may include the addition of sensitive information or the introduction of vulnerabilities.
+    - Issues and pull requests: This can provide insights into the development process and may reveal discussions about potential vulnerabilities or security issues.
+    - Code contents: This can reveal sensitive information such as API keys, credentials, or configuration files that may have been accidentally exposed in the codebase.
+- Document any findings from your GitHub reconnaissance, including the repositories identified, any sensitive information discovered, and any vulnerabilities or security issues revealed through the analysis of the repositories. This information can be valuable for later stages of testing and for writing your report. 
+
+
